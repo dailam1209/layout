@@ -14,24 +14,37 @@ export interface headerProps {
 const Header: React.FC<headerProps> = ({image, bg}) => {
   const [ number, setNumber ] = useState<number>(1);
 
+
   const handleShow = () => {
     const getShow = document.querySelector('.show');
-    console.log('getShow', getShow);
+    getShow?.classList.remove(`max-sm:hidden`)
     getShow?.classList.add('max-sm:block')
-    getShow?.classList.remove('max-sm:ml-[-700px]')
+    getShow?.classList.remove(`max-sm:ml-[-650px]`)
     getShow?.classList.add('max-sm:ml-0')
   };
-
   const handleHidden = () => {
     const getShow = document.querySelector('.show');
-    console.log('getShow remove', getShow);
-    getShow?.classList.add('max-sm:ml-[-700px]')
+    getShow?.classList.add(`max-sm:ml-[-650px]`)
   };
+
+  const scrollToSection = (sectionId: string) => {
+    handleHidden()
+    const element = document.getElementById(sectionId);
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  
+  
+ 
+
+  
+
+  
 
 
   
   return (
-    <div
+    <div id="header"
       className="bg max-h-[850px] h-[850px] w-full max-sm:h-[320px] sm:px-[180px] max-sm:pl-[15px] relative"
       style={{
         backgroundImage: "url(" + image + ")",
@@ -51,7 +64,7 @@ const Header: React.FC<headerProps> = ({image, bg}) => {
         <div className="sm:hidden max-sm:flex" onClick={() => handleShow()}>
           <img src={SVGS.tabbar} alt="farme"></img>
         </div>
-        <div className={`show z-20 flex max-sm:transition-all max-sm:ease-in-out max-sm:duration-300 max-sm:ml-[-700px]  items-center h-full font-semibold leading-5 max-sm:fixed max-sm:w-full max-sm:top-0 max-sm:left-0 max-sm:bg-[#002634] max-sm:hidden`}>
+        <div className={`show z-20 flex max-sm:transition-all max-sm:ease-in-out max-sm:duration-300 max-sm:ml-[-650px]  items-center h-full font-semibold leading-5 max-sm:fixed max-sm:w-full max-sm:top-0 max-sm:left-0 max-sm:bg-[#002634]`}>
           <div className="h-[27px] sm:hidden flex justify-between mx-[30px] mt-8">
             <div ></div>
             <div onClick={() => handleHidden()}>
@@ -61,30 +74,30 @@ const Header: React.FC<headerProps> = ({image, bg}) => {
           <div className="sm:hidden h-[1px] bg-[#F6F6F6] opacity-50 mx-[30px]"></div>
           <ul className="flex  sm:items-center h-full font-semibold leading-5 max-sm:flex-col max-sm:mt-[23.77px]  ">
             <li className="list-none relative flex justify-center max-sm:block max-sm:ml-0 max-sm:h-[39.25px] max-sm:bg-white max-sm:leading-[39.25px] max-sm:mb-[25.6px]  px-5 cursor-pointer">
-              <a className="no-underline text-[#DDB152] max-sm:ml-1 max-sm:text-[#002634]">Home</a>
+              <a className="no-underline text-[#DDB152] max-sm:ml-1 max-sm:text-[#002634]" href="#home" onClick={() => scrollToSection("home")}>Home</a>
               {number === 1 && <img src={SVGS.farme} alt="farme" className="absolute top-[24px] max-sm:hidden"></img>}
             </li>
             <li className="list-none relative flex justify-center  max-sm:block max-sm:ml-0 max-sm:h-[39.25px] max-sm:leading-[39.25px] max-sm:mb-[25.6px] px-5 cursor-pointer">
-              <a className="no-underline  text-white pr-[5px] max-sm:ml-1">Destinations</a>
+              <a className="no-underline  text-white pr-[5px] max-sm:ml-1" href="#destinations" onClick={() => scrollToSection("destinations")}>Destinations</a>
               <img src={SVGS.chevron_down} alt={"check_down"} className="max-sm:hidden" />
               {number === 2 && <img src={SVGS.farme} alt="farme" className="absolute top-[24px] max-sm:hidden"></img>}
             </li>
             <li className="list-none relative flex justify-center  max-sm:block max-sm:ml-0 max-sm:h-[39.25px] max-sm:leading-[39.25px] max-sm:mb-[25.6px] px-5 cursor-pointer">
-              <a className="no-underline text-white pr-[5px] max-sm:ml-1">Travel styles</a>
+              <a className="no-underline text-white pr-[5px] max-sm:ml-1" href="#travel" onClick={() => scrollToSection("travel")}>Travel styles</a>
               <img src={SVGS.chevron_down} alt={"check_down"} className="max-sm:hidden" />
               {number === 3 && <img src={SVGS.farme} alt="farme" className="absolute top-[24px] max-sm:hidden"></img>}
             </li>
             <li className="list-none relative flex justify-center  max-sm:block max-sm:ml-0 max-sm:h-[39.25px] max-sm:leading-[39.25px] max-sm:mb-[25.6px] px-5 cursor-pointer">
-              <a className="no-underline text-white max-sm:ml-1">About</a>
+              <a className="no-underline text-white max-sm:ml-1" href="#about" onClick={() => scrollToSection("about")}>About</a>
               {number === 4 && <img src={SVGS.farme} alt="farme" className="absolute top-[24px] max-sm:hidden"></img>}
             </li>
             <li className="list-none relative flex justify-center  max-sm:block max-sm:ml-0 max-sm:h-[39.25px] max-sm:leading-[39.25px] max-sm:mb-[25.6px] px-5 cursor-pointer">
-              <a className="no-underline text-white pr-[5px] max-sm:ml-1">Blog</a>
+              <a className="no-underline text-white pr-[5px] max-sm:ml-1" href="#blog" onClick={() => scrollToSection("blog")}>Blog</a>
               <img src={SVGS.chevron_down} alt={"check_down"} className="max-sm:hidden" />
               {number === 5 && <img src={SVGS.farme} alt="farme" className="absolute top-[24px] max-sm:hidden"></img>}
             </li>
             <li className="list-none relative flex justify-center  max-sm:block max-sm:ml-0 max-sm:h-[39.25px] max-sm:leading-[39.25px] max-sm:mb-[25.6px] px-5 cursor-pointer">
-              <a className="no-underline text-white">Contact</a>
+              <a className="no-underline text-white" href="#contact" onClick={() => scrollToSection("contact")}>Contact</a>
               {number === 6 && <img src={SVGS.farme} alt="farme" className="absolute top-[24px] max-sm:hidden"></img>}
             </li>
             <Connect/>

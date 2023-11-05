@@ -7,5 +7,5 @@ const images = {
 }
 
 export const listImage = [
-   images.image_1, images.image_2, images.image_1, images.image_2, images.image_1, images.image_2, images.image_1
+   images.image_1, images.image_2, images.image_1, images.image_2, images.image_1, images.image_2, images.image_1, images.image_2
 ]

@@ -5,7 +5,7 @@ import IMAGES from "../assets/images";
 
 const AboutUs = () => {
   return (
-    <div className="flex mt-[80px] sm:pl-[180px]  sm:pr-[76px] max-sm:px-[15px] max-sm:block max-sm:mt-0">
+    <div id='about' className="flex mt-[80px] sm:pl-[180px]  sm:pr-[76px] max-sm:px-[15px] max-sm:block max-sm:mt-0">
       <div className=" text-white max-w-[604px] mt-[142px] max-sm:gap-4 max-sm:mt-0">
         <div className="about">
           <h2 className="text-[50px] font-bold leading-[82.5px] max-sm:text-[24px] max-sm:h-[26px] max-sm:leading-[26px] max-sm:mb-4">

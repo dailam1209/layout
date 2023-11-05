@@ -27,4 +27,6 @@ export const SVGS = {
     folow_2_2: require('./check.svg').default,
     folow_2_mobile: require('./flow-2-mobile.svg').default,
     viet_nam: require('./Vietnam.svg').default,
+    abosolute_image: require('./abosolute-image.svg').default,
+    
 }

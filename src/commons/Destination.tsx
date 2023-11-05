@@ -41,7 +41,7 @@ export const Information: React.FC<inforProps> = ({ address, name, title, isHidd
 
 const Destination = () => {
   return (
-    <div className="mt-28 mb-12 sm:px-[180px] max-sm:px-[15px] max-sm:mt-[45px]  ">
+    <div id="destinations"  className="mt-28 mb-12 sm:px-[180px] max-sm:px-[15px] max-sm:mt-[45px]  ">
       <h2 className="font-bold h-[61px] w-full text-[50px] leading-[82.5px] text-white max-sm:text-[24px] mb-12 ">
         TOP DESTINATIONS
       </h2>

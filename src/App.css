@@ -38,3 +38,28 @@
 .custom-blur {
     filter: blur(101px);
   }
+
+.box-btn {
+  box-shadow: 4px 8px 48px 0px rgba(92, 196, 187, 0.30);
+
+}
+
+.normal {
+  line-height: normal;
+}
+
+.navbar-mobile {
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 3px;
+  background: black;
+}
+
+.circle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, #84C4FF 0%, #5CC4BB 100%);
+  border-radius: 50%; 
+  padding: 10px; /* Khoảng trống 3px xung quanh nội dung */
+}

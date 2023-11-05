@@ -8,6 +8,7 @@ import Tours from "../commons/Tours";
 import Folow from "../commons/Folow";
 import Review from "../commons/Review";
 import Footer from "../commons/Footer";
+import { NavbarMobile } from "../commons/NavbarMobile";
 
 const Home = () => {
 
@@ -28,13 +29,13 @@ const Home = () => {
     }
   }, [width, widthBg])
   return (
-    <div className="min-h-max min-w-full " style={{
+    <div id="home" className="min-h-max w-full " style={{
         backgroundImage: "url(" + IMAGES.background + ")",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}>
         <Header image={image} bg={widthBg}/>
-        <div className="fixed z-10 top-[627px] max-sm:top-[393px] right-7">
+        <div className="fixed z-10 top-[550px] max-sm:top-[393px] right-7 mb-11">
             <Contact/>
         </div>
         <Destination/>
@@ -42,7 +43,8 @@ const Home = () => {
         <Tours/>
         <Folow clientBodyWidth={width}/>
         <Review/>
-        {/* <Footer/> */}
+        <Footer/>
+        <NavbarMobile/>
     </div>
   )
 }
