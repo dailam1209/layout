@@ -32,7 +32,7 @@ export const NavbarMobile = () => {
         </div>
       </div>
 
-        <div className="absolute bottom-5 navbar-mobile p-3 rounded-full">
+        <div className="absolute bottom-5  p-3 rounded-full navbar-mobile">
       <div className="circle-container">
             <img src={svgNavbarMobile.map} alt='user' className="w-7 h-7"></img>
             </div>
